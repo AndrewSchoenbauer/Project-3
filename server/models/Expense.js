@@ -19,6 +19,12 @@ const expenseSchema = new Schema(
         type: Date,
         default: Date.now,
       },
+      Trip: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: 'Trip',
+        },
+      ],
     },
     {
       toJSON: {
@@ -29,5 +35,5 @@ const expenseSchema = new Schema(
   );
   
   const Expense = model('Expense', expenseSchema);
-  module.exports = ExpenseSchema;
+  module.exports = expenseSchema;
   
