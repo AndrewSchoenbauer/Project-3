@@ -19,12 +19,18 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  Expense: [
+  Trip: [
     {
       type: Schema.Types.ObjectId,
-      ref: 'Expense',
+      ref: 'Trip',
     },
   ],
+  Expense: [
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'Expense'
+    }
+]
 });
 
 const User = model('User', userSchema);
