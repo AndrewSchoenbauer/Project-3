@@ -8,9 +8,12 @@ const resolvers = {
       return User.find()
       // .populate('trips');
     },
+   trips: async () => {
+    return Trip.find();
+    },
     user: async (parent, { username }) => {
       return User.findOne({ username });
-    },
+    }, 
 },
 
 Mutation: {
@@ -18,6 +21,10 @@ Mutation: {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
+    },
+    addTrip: async (parent, { tripName, startDate, endDate}) => {
+      const trip = await Trip.create({ tripName, startDate, endDate });
+      return {trip};
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
