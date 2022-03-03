@@ -12,3 +12,14 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_TRIP = gql`
+query Query {
+  trips {
+    _id
+    tripName
+    startDate
+    endDate
+   
+  }
+}`;

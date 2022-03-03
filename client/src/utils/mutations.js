@@ -20,3 +20,16 @@ export const ADD_USER = gql`
       }
     }
   }`;
+
+  export const ADD_TRIP = gql`
+  mutation AddTrip($tripName: String!, $startDate: String!, $endDate: String!) {
+    addTrip(tripName: $tripName, startDate: $startDate, endDate: $endDate) {
+      user {
+        trip {
+          tripName
+          startDate
+          endDate
+        }
+      }
+    }
+  }`;
