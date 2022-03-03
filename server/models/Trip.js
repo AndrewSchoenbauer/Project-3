@@ -8,11 +8,11 @@ const tripSchema = new Schema(
             required: true,
         },
         startDate: {
-            type: Date,
+            type: String,
             default: Date.now(),
         },
         endDate: {
-            type: Date,
+            type: String,
             // Sets a default value of 12 weeks from now
             default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
         },
