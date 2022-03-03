@@ -25,8 +25,24 @@ const tripSchema = new Schema(
 
         Expense: [
             {
-                type: Schema.Types.ObjectId,
-                ref: 'Expense'
+               expenseDescription: {
+                   type: String, 
+                   required: true,
+                   minlength: 1,
+                   maxlength: 100,
+               },
+               price: {
+                   type: Number,
+                   required: true,
+               },
+               quantity: {
+                   type: Number,
+                   default: 1,
+               },
+               expenseAuthor: {
+                   type: String,
+                   required: true,
+               }
             }
         ]
     },
