@@ -34,3 +34,18 @@ export const ADD_USER = gql`
       }
     }
   }`;
+
+  export const ADD_EXPENSE = gql `
+  mutation AddExpense($tripId: ID!, $expenseDescription: String!, $price: Int!, $quantity: Int!, $expenseAuthor: String!) {
+    addExpense(tripId: $tripId, expenseDescription: $expenseDescription, price: $price, quantity: $quantity, expenseAuthor: $expenseAuthor) {
+      tripName
+      startDate
+      endDate
+      expenses {
+        expenseDescription
+        price
+        expenseAuthor
+        quantity
+      }
+    }
+  }`
