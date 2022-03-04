@@ -49,8 +49,8 @@ function App() {
             <Route exact path="/">
               <Login />
             </Route>
-            <Route exact path="/login">
-              <Login />
+            <Route path="/login">
+              <Home/>
             </Route>
             {/* <Route exact path="/signup"> */}
               {/* <Signup /> */}
