@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 // import CommentList from '../components/CommentList';
-// import CommentForm from '../components/CommentForm';
+import ExpenseForm from '../components/ExpenseForm';
 
 import { QUERY_SINGLETRIP } from '../utils/queries';
 
@@ -18,7 +18,7 @@ const SingleTrip = () => {
     variables: { tripId: tripId },
   });
 
-  const trip = data?.thought || {};
+  const trip = data?.trip || {};
 
   if (loading) {
     return <div>Loading...</div>;
@@ -41,16 +41,16 @@ const SingleTrip = () => {
             lineHeight: '1.5',
           }}
         >
-          {/* {trip.tripName} */}
+          {trip.tripName}
         </blockquote>
       </div>
 
       {/* <div className="my-5">
         <CommentList comments={thought.comments} />
-      </div>
-      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm thoughtId={thought._id} />
       </div> */}
+      <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+        <ExpenseForm tripId={trip._id} />
+      </div>
     </div>
   );
 };

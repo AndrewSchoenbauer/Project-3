@@ -33,7 +33,9 @@ export const ADD_USER = gql`
         }
       }
     }
-  }`
+
+  }`;
+
   export const ADD_USER_TO_TRIP = gql`
   mutation AddUserToTrip($tripId: ID!, $userId: ID!) {
     addUserToTrip(tripId: $tripId, userId: $userId) {
@@ -49,5 +51,6 @@ export const ADD_USER = gql`
   mutation AddExpense($tripId: ID!, $expenseDescription: String!, $price: Int!, $quantity: Int!, $expenseAuthor: String!) {
     addExpense(tripId: $tripId, expenseDescription: $expenseDescription, price: $price, quantity: $quantity, expenseAuthor: $expenseAuthor) {
       tripName
+
     }
   }`
