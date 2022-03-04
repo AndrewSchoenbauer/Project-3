@@ -44,6 +44,10 @@ const typeDefs = gql`
       quantity: Int!
       expenseAuthor: String!
     ): Trip
+    addUserToTrip(
+    tripId: ID!
+    userId: ID!    
+    ): Trip
   }`
 
   module.exports = typeDefs;
