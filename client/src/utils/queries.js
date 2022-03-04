@@ -25,5 +25,9 @@ query Trip($tripId: ID!) {
       quantity
       expenseAuthor
     }
+    users {
+      username
+    }
   }
+}
 }`;

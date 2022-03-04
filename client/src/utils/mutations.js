@@ -33,19 +33,24 @@ export const ADD_USER = gql`
         }
       }
     }
+
   }`;
 
-  export const ADD_EXPENSE = gql `
+  export const ADD_USER_TO_TRIP = gql`
+  mutation AddUserToTrip($tripId: ID!, $userId: ID!) {
+    addUserToTrip(tripId: $tripId, userId: $userId) {
+      tripName
+      users {
+        username
+      }
+    }
+  }
+  `;
+
+  export const ADD_EXPENSE =gql`
   mutation AddExpense($tripId: ID!, $expenseDescription: String!, $price: Int!, $quantity: Int!, $expenseAuthor: String!) {
     addExpense(tripId: $tripId, expenseDescription: $expenseDescription, price: $price, quantity: $quantity, expenseAuthor: $expenseAuthor) {
       tripName
-      startDate
-      endDate
-      expenses {
-        expenseDescription
-        price
-        expenseAuthor
-        quantity
-      }
+
     }
   }`

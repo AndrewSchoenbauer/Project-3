@@ -8,28 +8,28 @@ const resolvers = {
       return User.find()
       // .populate('trips');
     },
-   trips: async () => {
-    return Trip.find();
+    trips: async () => {
+      return Trip.find();
     },
     trip: async (parent, { tripId }) => {
-      const trip= await Trip.findOne({ _id: tripId }).populate("users");
+      const trip = await Trip.findOne({ _id: tripId }).populate("users");
       console.log(trip);
       return trip;
-    }, 
+    },
     user: async (parent, { username }) => {
       return User.findOne({ username });
-    }, 
-},
+    },
+  },
 
-Mutation: {
+  Mutation: {
     addUser: async (parent, { username, email, password }) => {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
     },
-    addTrip: async (parent, { tripName, startDate, endDate}) => {
+    addTrip: async (parent, { tripName, startDate, endDate }) => {
       const trip = await Trip.create({ tripName, startDate, endDate });
-      return {trip};
+      return { trip };
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -64,11 +64,27 @@ Mutation: {
       return Trip.findOneAndUpdate(
         { _id: tripId },
         {
-          $addToSet: { users: userId  },
+          $addToSet: { users: userId },
         },
-      )}
-  
-  }}
+      )
+    },
+    removeExpense: async (parent, { tripId, expenseId }) => {
+      return Trip.findOneAndUpdate(
+        { _id: tripId },
+        { $pull: { expenses: { _id: expenseId } } },
+        { new: true }
+      );
+    },
+    removeUser: async (parent, { tripId, userId }) => {
+      return Trip.findOneAndUpdate(
+        { _id: tripId },
+        { $pull: { users: userId  } },
+        { new: true }
+      );
+    },
+
+  }
+}
 
 
-    module.exports = resolvers;
+module.exports = resolvers;
