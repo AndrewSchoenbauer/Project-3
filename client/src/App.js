@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useState } from "react";
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
+
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
+import Nav from './components/Nav';
 // import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleTrip from './pages/SingleTrip';
-// import Header from './components/Header';
-// import Footer from './components/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -40,6 +42,16 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const [pages] = useState([
+    {
+      name: "Log in"
+    },
+    { name: "Sign Up" },
+    
+  ]);
+
+  const [currentPage, setCurrentPage] = useState(pages[0]);
+
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -47,6 +59,13 @@ function App() {
           {/* <Header /> */}
           <div className="container">
             <Route exact path="/">
+            <Header>
+            <Nav
+              pages={pages}
+              setCurrentPage={setCurrentPage}
+              currentPage={currentPage}
+            ></Nav>
+            </Header>
               <Home />
             </Route>
             <Route exact path="/login">
@@ -59,7 +78,7 @@ function App() {
               <SingleTrip />
             </Route>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </Router>
     </ApolloProvider>
