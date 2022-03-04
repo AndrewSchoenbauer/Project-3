@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './pages/Home';
 // import Signup from './pages/Signup';
 import Login from './pages/Login';
-// import SingleThought from './pages/SingleThought';
+import SingleTrip from './pages/SingleTrip';
 // import Header from './components/Header';
 // import Footer from './components/Footer';
 
@@ -47,17 +47,17 @@ function App() {
           {/* <Header /> */}
           <div className="container">
             <Route exact path="/">
-              <Login />
+              <Home />
             </Route>
-            <Route path="/login">
-              <Home/>
+            <Route exact path="/login">
+              <Login />
             </Route>
             {/* <Route exact path="/signup"> */}
               {/* <Signup /> */}
             {/* </Route> */}
-            {/* <Route exact path="/thoughts/:thoughtId"> */}
-              {/* <SingleThought /> */}
-            {/* </Route> */}
+            <Route exact path="/trips/:tripId">
+              <SingleTrip />
+            </Route>
           </div>
           {/* <Footer /> */}
         </div>
