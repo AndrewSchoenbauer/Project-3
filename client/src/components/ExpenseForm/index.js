@@ -10,13 +10,13 @@ const ExpenseForm = ({ tripId }) => {
   const [expenseText, setExpenseText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
 
-  const [addTrip, { error }] = useMutation(ADD_EXPENSE);
+  const [addExpense, { error }] = useMutation(ADD_EXPENSE);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const { data } = await addTrip({
+      const { data } = await addExpense({
         variables: {
           tripId,
           expenseDescription,
