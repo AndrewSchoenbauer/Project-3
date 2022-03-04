@@ -13,7 +13,7 @@ export const QUERY_USER = gql`
   }
 `;
 
-export const QUERY_TRIP = gql`
+export const QUERY_SINGLETRIP = gql`
 query Query {
   trips {
     _id
