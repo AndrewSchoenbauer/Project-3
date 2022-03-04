@@ -12,7 +12,7 @@ const resolvers = {
     return Trip.find();
     },
     trip: async (parent, { tripId }) => {
-      const trip= await Trip.findOne({ _id: tripId });
+      const trip= await Trip.findOne({ _id: tripId }).populate("users");
       console.log(trip);
       return trip;
     }, 
@@ -60,9 +60,13 @@ Mutation: {
         }
       );
     },
-  
-  
-  
+    addUserToTrip: async (parent, { tripId, userId }) => {
+      return Trip.findOneAndUpdate(
+        { _id: tripId },
+        {
+          $addToSet: { users: userId  },
+        },
+      )}
   
   }}
 
