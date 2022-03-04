@@ -47,10 +47,10 @@ function App() {
           {/* <Header /> */}
           <div className="container">
             <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/login">
               <Login />
+            </Route>
+            <Route path="/login">
+              <Home/>
             </Route>
             {/* <Route exact path="/signup"> */}
               {/* <Signup /> */}
