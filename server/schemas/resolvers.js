@@ -11,6 +11,11 @@ const resolvers = {
    trips: async () => {
     return Trip.find();
     },
+    trip: async (parent, { tripId }) => {
+      const trip= await Trip.findOne({ _id: tripId });
+      console.log(trip);
+      return trip;
+    }, 
     user: async (parent, { username }) => {
       return User.findOne({ username });
     }, 
@@ -42,7 +47,24 @@ Mutation: {
       const token = signToken(user);
 
       return { token, user };
-    },}}
+    },
+    addExpense: async (parent, { tripId, expenseDescription, price, quantity, expenseAuthor }) => {
+      return Trip.findOneAndUpdate(
+        { _id: tripId },
+        {
+          $addToSet: { expenses: { expenseDescription, price, quantity, expenseAuthor } },
+        },
+        {
+          new: true,
+          runValidators: true,
+        }
+      );
+    },
+  
+  
+  
+  
+  }}
 
 
     module.exports = resolvers;
