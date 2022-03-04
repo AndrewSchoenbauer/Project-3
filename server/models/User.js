@@ -19,18 +19,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  Trip: [
+  trips: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Trip',
     },
   ],
-  Expense: [
-    {
-        type: Schema.Types.ObjectId,
-        ref: 'Expense'
-    }
-]
 });
 userSchema.pre('save', async function (next) {
   if (this.isNew || this.isModified('password')) {
