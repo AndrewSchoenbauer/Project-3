@@ -14,12 +14,18 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_SINGLETRIP = gql`
-query Query {
-  trips {
-    _id
+query Trip($tripId: ID!) {
+  trip(tripId: $tripId) {
     tripName
-    startDate
-    endDate
-   
+    expenses {
+      expenseDescription
+      price
+      quantity
+      expenseAuthor
+    }
+    users {
+      username
+    }
   }
+}
 }`;
