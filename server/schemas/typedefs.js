@@ -48,6 +48,8 @@ const typeDefs = gql`
     tripId: ID!
     userId: ID!    
     ): Trip
+    removeExpense(tripId: ID!, expenseId: ID!): Trip
+    removeUser(tripId: ID!, userId: ID!): Trip
   }`
 
   module.exports = typeDefs;
