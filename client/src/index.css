@@ -26,7 +26,7 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: 0.1em;
-  background-color: rgb(85, 83, 77);
+  background-color: rgb(175, 170, 154);
   color: var(--light);
   font-family: 'Open Sans', sans-serif;
 }
@@ -37,8 +37,8 @@ h1 {
   font-size: 5rem;
   margin: 50px 20px;
 }
-/* */
-li {
+
+nav li {
   list-style: none;
 }
 
