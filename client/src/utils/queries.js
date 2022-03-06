@@ -29,5 +29,5 @@ query Trip($tripId: ID!) {
       username
     }
   }
-}
+
 }`;
