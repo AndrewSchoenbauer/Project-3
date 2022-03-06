@@ -8,6 +8,7 @@ import Auth from '../utils/auth';
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
+console.log(formState.email)
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -18,7 +19,7 @@ const Login = () => {
       [name]: value,
     });
   };
-
+console.log(handleChange);
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -49,7 +50,7 @@ const Login = () => {
             {data ? (
               <p>
                 Success! You may now head{' '}
-                <Link to="/home">back to the homepage.</Link>
+                <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
