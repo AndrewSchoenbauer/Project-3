@@ -77,7 +77,7 @@ function App() {
               <SingleTrip />
             </Route>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </Router>
     </ApolloProvider>
