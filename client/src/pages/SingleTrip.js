@@ -4,10 +4,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-// import CommentList from '../components/CommentList';
+import ExpenseList from '../components/ExpenseList';
 import ExpenseForm from '../components/ExpenseForm';
 
 import { QUERY_SINGLETRIP } from '../utils/queries';
+
 
 const SingleTrip = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -19,7 +20,15 @@ const SingleTrip = () => {
   });
 
   const trip = data?.trip || {};
-
+  console.log(trip)
+  const expenseCreator = (item) => {
+    return <ExpenseList 
+    key={item._id}
+    expenseDescription={item.expenseDescription}
+    price= {item.price}
+    quantity={item.quantity}
+    expenseAuthor={item.expenseAuthor}  />;
+  };
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -46,13 +55,15 @@ const SingleTrip = () => {
         </blockquote>
       </div>
 
-      {/* <div className="my-5">
-        <CommentList comments={thought.comments} />
-      </div> */}
+      
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <ExpenseForm tripId={tripId} expenses={trip.expenses}/>
 
       </div>
+      <div>
+            <h1 className="title">Expenses</h1>
+            {trip.expenses.map(expenseCreator)}
+          </div>
     </div>
   );
 };

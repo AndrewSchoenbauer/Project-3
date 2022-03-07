@@ -64,7 +64,7 @@ const resolvers = {
       return trip;
     },
     addUserToTrip: async (parent, { tripId, userId }) => {
-      return Trip.findOneAndUpdate(
+      return await Trip.findOneAndUpdate(
         { _id: tripId },
         {
           $addToSet: { users: userId },
@@ -72,14 +72,14 @@ const resolvers = {
       )
     },
     removeExpense: async (parent, { tripId, expenseId }) => {
-      return Trip.findOneAndUpdate(
+      return await Trip.findOneAndUpdate(
         { _id: tripId },
         { $pull: { expenses: { _id: expenseId } } },
         { new: true }
       );
     },
     removeUser: async (parent, { tripId, userId }) => {
-      return Trip.findOneAndUpdate(
+      return await Trip.findOneAndUpdate(
         { _id: tripId },
         { $pull: { users: userId  } },
         { new: true }
