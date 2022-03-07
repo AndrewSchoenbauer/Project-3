@@ -13,7 +13,6 @@ const resolvers = {
     },
     trip: async (parent, { tripId }) => {
       const trip = await Trip.findOne({ _id: tripId }).populate("users");
-      console.log(trip);
       return trip;
     },
     user: async (parent, { username }) => {
@@ -49,6 +48,7 @@ const resolvers = {
       return { token, user };
     },
     addExpense: async (parent, { tripId, expenseDescription, price, quantity, expenseAuthor }) => {
+      console.log( "hello", tripId, expenseDescription, price, quantity, expenseAuthor)
       return Trip.findOneAndUpdate(
         { _id: tripId },
         {

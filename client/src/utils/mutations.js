@@ -70,7 +70,7 @@ export const ADD_USER = gql`
         _id
         expenseDescription
         price
-        quanitity
+        quantity
         expenseAuthor
       }
     }
