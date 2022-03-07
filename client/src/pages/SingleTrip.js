@@ -42,6 +42,7 @@ const SingleTrip = () => {
           }}
         >
           {trip.tripName}
+
         </blockquote>
       </div>
 
@@ -49,7 +50,7 @@ const SingleTrip = () => {
         <CommentList comments={thought.comments} />
       </div> */}
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <ExpenseForm tripId={trip._id} expenses={trip.expenses}/>
+        <ExpenseForm tripId={tripId} expenses={trip.expenses}/>
 
       </div>
     </div>

@@ -49,11 +49,11 @@ export const ADD_USER = gql`
 
   export const ADD_EXPENSE =gql`
   mutation addExpense(
-    $tripId: ID!
-    $expenseDescription: String! 
-    $price: Int! 
-    $quantity: Int! 
-    $expenseAuthor: String!
+    $tripId: ID
+    $expenseDescription: String
+    $price: Int 
+    $quantity: Int
+    $expenseAuthor: String
     ) {
     addExpense(
       tripId: $tripId
@@ -67,10 +67,9 @@ export const ADD_USER = gql`
       startDate
       endDate
       expenses {
-        _id
         expenseDescription
         price
-        quanitity
+        quantity
         expenseAuthor
       }
     }

@@ -8,7 +8,8 @@ import { ADD_EXPENSE } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
 const ExpenseForm = ({ tripId }) => {
-  const [formState, setFormState] = useState({ expenseDescription: '', price: 0, expenseAuthor: '', quantity: 0 });
+  console.log(tripId)
+  const [formState, setFormState] = useState({tripId: tripId, expenseDescription: '', price: 0, expenseAuthor: '', quantity: 0 });
 
   const [addExpense, { error }] = useMutation(ADD_EXPENSE);
   const handleChange = (event) => {
@@ -21,22 +22,29 @@ const ExpenseForm = ({ tripId }) => {
   };
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState)
+    console.log(formState);
+    // const newObj =  { tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor }
+    // console.log(newObj);
+    
     try {
-      const { data } = await addExpense({
-        variables: { ...formState },
+      // const  data  = await addExpense({
+      //   variables: { tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor },
+      // });
+      const  {data}  = await addExpense({
+        variables: {  tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor },
       });
-
+console.log(data);
 
     } catch (err) {
-      console.error(err);
+      console.error(JSON.stringify(err,null,2));
     }
-    setFormState({
-      expenseDescription: '',
-      price: 0,
-      expenseAuthor: '',
-      quanitity: 0,
-    })
+    // setFormState({
+    //   tripId: tripId,
+    //   expenseDescription: '',
+    //   price: 0,
+    //   expenseAuthor: '',
+    //   quanitity: 0,
+    // })
   };
 
 
@@ -45,7 +53,7 @@ const ExpenseForm = ({ tripId }) => {
     <div>
       <h4>Do you have any expenses to add?</h4>
 
-      {/* {Auth.loggedIn() ? ( */}
+      {Auth.loggedIn() ? (
       <>
       
         <p
@@ -126,13 +134,13 @@ const ExpenseForm = ({ tripId }) => {
             </div>
           </form> */}
       </>
-      {/* // ) : ( */}
+       ) : ( 
       <p>
         You need to be logged in to share your thoughts. Please{' '}
         <Link to="/login">login</Link>
         {/* or <Link to="/signup">signup.</Link> */}
       </p>
-)
+)}
     </div>
   );
 };

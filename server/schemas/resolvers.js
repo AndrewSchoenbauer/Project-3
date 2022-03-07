@@ -13,7 +13,6 @@ const resolvers = {
     },
     trip: async (parent, { tripId }) => {
       const trip = await Trip.findOne({ _id: tripId }).populate("users");
-      console.log(trip);
       return trip;
     },
     user: async (parent, { username }) => {
@@ -48,8 +47,10 @@ const resolvers = {
 
       return { token, user };
     },
-    addExpense: async (parent, { tripId, expenseDescription, price, quantity, expenseAuthor }) => {
-      return Trip.findOneAndUpdate(
+    addExpense: async (parent, {tripId, expenseDescription, price, quantity, expenseAuthor}) => {
+      // console.log(args);
+      console.log( "hello", tripId, expenseDescription, price, quantity, expenseAuthor)
+      const trip = await Trip.findOneAndUpdate(
         { _id: tripId },
         {
           $addToSet: { expenses: { expenseDescription, price, quantity, expenseAuthor } },
@@ -59,6 +60,8 @@ const resolvers = {
           runValidators: true,
         }
       );
+      console.log(trip);
+      return trip;
     },
     addUserToTrip: async (parent, { tripId, userId }) => {
       return Trip.findOneAndUpdate(

@@ -38,11 +38,11 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addTrip(tripName: String!, startDate: String!, endDate: String!): Trip
     addExpense(
-      tripId: ID!
-      expenseDescription: String!
-      price: Int!
-      quantity: Int!
-      expenseAuthor: String!
+      tripId: ID
+      expenseDescription: String
+      price: Int
+      quantity: Int
+      expenseAuthor: String
     ): Trip
     addUserToTrip(
     tripId: ID!
