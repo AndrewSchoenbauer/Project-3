@@ -5,7 +5,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
