@@ -26,9 +26,9 @@ const SingleTrip = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        Something here <br />
+         <br />
         <span style={{ fontSize: '1rem' }}>
-          had this thought on 
+          Your Trip
         </span>
       </h3>
       <div className="bg-light py-4">
@@ -49,7 +49,7 @@ const SingleTrip = () => {
         <CommentList comments={thought.comments} />
       </div> */}
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        {/* <ExpenseForm tripId={trip._id} expenses={trip.expenses}/> */}
+        <ExpenseForm tripId={trip._id} expenses={trip.expenses}/>
 
       </div>
     </div>

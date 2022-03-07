@@ -19,7 +19,6 @@ console.log(formState.email)
       [name]: value,
     });
   };
-console.log(handleChange);
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
