@@ -11,11 +11,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
 import Nav from './components/Nav';
-// import Signup from './pages/Signup';
+import Signup from './pages/Signup';
 import Login from './pages/Login';
 import SingleTrip from './pages/SingleTrip';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Trip from './pages/Trip'
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -45,8 +46,11 @@ function App() {
   const [pages] = useState([
     {
       name: "Log in"
+     
     },
-    { name: "Sign Up" },
+    { 
+      name: "Sign Up" 
+    },
     
   ]);
 
@@ -70,9 +74,12 @@ function App() {
             <Route exact path="/login">
               <Login />
             </Route>
-            {/* <Route exact path="/signup"> */}
-              {/* <Signup /> */}
-            {/* </Route> */}
+            <Route exact path="/addTrip">
+              <Trip />
+            </Route>
+            <Route exact path="/signup"> 
+              <Signup />
+            </Route>
             <Route exact path="/trips/:tripId">
               <SingleTrip />
             </Route>
