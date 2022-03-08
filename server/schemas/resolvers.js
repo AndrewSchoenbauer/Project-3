@@ -57,13 +57,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addExpense: async (parent, { tripId, expenseDescription, price, quantity, expenseAuthor }) => {
+    addExpense: async (parent, { tripId, expenseDescription, price, expenseAuthor }) => {
       // console.log(args);
-      console.log("hello", tripId, expenseDescription, price, quantity, expenseAuthor)
+      console.log("hello", tripId, expenseDescription, price, expenseAuthor)
       const trip = await Trip.findOneAndUpdate(
         { _id: tripId },
         {
-          $addToSet: { expenses: { expenseDescription, price, quantity, expenseAuthor } },
+          $addToSet: { expenses: { expenseDescription, price, expenseAuthor } },
         },
         {
           new: true,

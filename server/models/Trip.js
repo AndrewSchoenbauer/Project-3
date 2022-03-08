@@ -40,10 +40,6 @@ const tripSchema = new Schema(
                    type: Number,
                    required: true,
                },
-               quantity: {
-                   type: Number,
-                   default: 1,
-               },
                expenseAuthor: {
                    type: String,
                    required: true,

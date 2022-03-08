@@ -10,12 +10,10 @@ console.log(user)
         user.trips.map((trip) => (
             
           <div key={trip._id} className="card mb-3 individual-trip">
-            <h4 className="card-header p-2 m-0 individual-trip">
-               <br className='individual-break-line'/>
+            <h4 className="card-header p-2 m-0 individual-trip-name">
+            {trip.tripName}
             </h4>
-            <div className="card-body p-2 individual-trip">
-              <p className='individual-trip-name'>{trip.tripName}</p>
-            </div>
+            
             <Link
               className="btn btn-primary btn-block btn-squared "
               to={`/trips/${trip._id}`}

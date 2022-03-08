@@ -9,7 +9,7 @@ import Auth from '../../utils/auth';
 
 const ExpenseForm = ({ tripId }) => {
   console.log(tripId)
-  const [formState, setFormState] = useState({tripId: tripId, expenseDescription: '', price: 0, expenseAuthor: '', quantity: 0 });
+  const [formState, setFormState] = useState({tripId: tripId, expenseDescription: '', price: 0, expenseAuthor: '' });
 
   const [addExpense, { error }] = useMutation(ADD_EXPENSE);
   const handleChange = (event) => {
@@ -26,9 +26,10 @@ const ExpenseForm = ({ tripId }) => {
     
     try {
       const  {data}  = await addExpense({
-        variables: {  tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor },
+        variables: {  tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), expenseAuthor: formState.expenseAuthor },
       });
 console.log(data);
+window.location.reload()
 
     } catch (err) {
       console.error(JSON.stringify(err,null,2));
@@ -46,7 +47,7 @@ console.log(data);
 
   return (
     <div className='expenseContainer'>
-      <h4>Do you have any expenses to add?</h4>
+      <h4 className='expenseText'>Do you have any expenses to add?</h4>
 
       {Auth.loggedIn() ? (
       <>
@@ -81,16 +82,6 @@ console.log(data);
             onChange={handleChange} />
             <InputGroup.Text>.00</InputGroup.Text>
           </InputGroup>
-          <Form.Select 
-          aria-label="Default select example"
-          name="quantity"
-          value={formState.quantity}
-          onChange={handleChange}>
-            <option>Select the quantity</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </Form.Select>
 
           <InputGroup>
             <InputGroup.Text>Expense Description</InputGroup.Text>
@@ -100,8 +91,8 @@ console.log(data);
             value={formState.expenseDescription}
             onChange={handleChange} />
           </InputGroup>
-          <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
+          <div className="col-12 add-expense-btn">
+              <button className="btn btn-primary add-expense-btn" type="submit">
                 Add Expense
               </button>
             </div>

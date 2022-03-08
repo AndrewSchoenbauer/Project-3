@@ -32,7 +32,6 @@ export const ADD_USER = gql`
         expenses {
           expenseAuthor
           expenseDescription
-          quantity 
           price
         }
       }
@@ -55,14 +54,12 @@ export const ADD_USER = gql`
     $tripId: ID
     $expenseDescription: String
     $price: Int 
-    $quantity: Int
     $expenseAuthor: String
     ) {
     addExpense(
       tripId: $tripId
       expenseDescription: $expenseDescription
       price: $price 
-      quantity: $quantity 
       expenseAuthor: $expenseAuthor
       ) {
       _id  
@@ -72,7 +69,6 @@ export const ADD_USER = gql`
       expenses {
         expenseDescription
         price
-        quantity
         expenseAuthor
       }
     }

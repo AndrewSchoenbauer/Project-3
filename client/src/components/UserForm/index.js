@@ -29,7 +29,7 @@ const UserForm = ({ tripId }) => {
             const { data } = await addUserToTrip({
                 variables: { tripId: formState.tripId, userId: formState.userId },
             });
-            // console.log(data);
+            window.location.reload()
 
         } catch (err) {
             console.error(JSON.stringify(err, null, 2));
@@ -37,13 +37,13 @@ const UserForm = ({ tripId }) => {
         }
     };
     return (
-        <form onSubmit={handleFormSubmit}>
+        <form className='expenseContainer' onSubmit={handleFormSubmit}>
             <Form.Select aria-label="Default select example" onChange={handleChange} name="userId">
                 <option>Open this select menu</option>
                 {users.map((user) => (
                     <option data-id={user._id} value={user._id} >{user.username}</option>))}
             </Form.Select>
-            <div className="col-12 col-lg-3">
+            <div className="col-12 add-expense-btn">
                 <button className="btn btn-primary btn-block py-3" type="submit">
                     Add User to this Trip
                 </button>
