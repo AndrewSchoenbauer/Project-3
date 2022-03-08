@@ -68,12 +68,19 @@ const resolvers = {
       return trip;
     },
     addUserToTrip: async (parent, { tripId, userId }) => {
-      return await Trip.findOneAndUpdate(
+       const trip= await Trip.findOneAndUpdate(
         { _id: tripId },
         {
           $addToSet: { users: userId },
         },
       )
+      await User.findOneAndUpdate(
+        { _id: userId },
+        { $addToSet: { trips: trip._id } }
+      );
+
+      return trip;
+
     },
     removeExpense: async (parent, { tripId, expenseId }) => {
       return await Trip.findOneAndUpdate(

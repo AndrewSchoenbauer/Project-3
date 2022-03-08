@@ -6,8 +6,9 @@ import { useQuery } from '@apollo/client';
 
 import ExpenseList from '../components/ExpenseList';
 import ExpenseForm from '../components/ExpenseForm';
-
+import UserForm from '../components/UserForm'
 import { QUERY_SINGLETRIP } from '../utils/queries';
+import { QUERY_USER } from '../utils/queries';
 
 
 const SingleTrip = () => {
@@ -18,7 +19,9 @@ const SingleTrip = () => {
     // pass URL parameter
     variables: { tripId: tripId },
   });
-
+// const {loading, data} = useQuery(QUERY_USER,{
+//   variables: {userId: userId}
+// })
   const trip = data?.trip || {};
   console.log(trip)
   const expenseCreator = (item) => {
@@ -61,6 +64,9 @@ const SingleTrip = () => {
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
         <ExpenseForm tripId={tripId} expenses={trip.expenses}/>
 
+      </div>
+      <div>
+        <UserForm tripId={tripId}></UserForm>
       </div>
       <div>
             <h1 className="title">Expenses</h1>
