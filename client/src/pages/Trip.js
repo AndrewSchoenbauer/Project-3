@@ -42,11 +42,11 @@ const Trip = () => {
     };
 
     return (
-        <main className="flex-row justify-center mb-4">
+        <main className="flex-row justify-center mb-4 create-trip">
             <div className="col-12 col-lg-10">
-                <div className="card">
+                <div className="card create-trip-box ">
                     <h4 className="card-header bg-dark text-light p-2">Create a Trip!</h4>
-                    <div className="card-body">
+                    <div className="card-body ">
                         {data ? (
                             <p>
                                 Success! You may now head{' '}
@@ -79,7 +79,7 @@ const Trip = () => {
                                     </div>
                                 </div>
                                 <button
-                                    className="btn btn-block btn-primary"
+                                    className="btn btn-block  create-trip-btn"
                                     style={{ cursor: 'pointer' }}
                                     type="submit"
                                 >
