@@ -56,7 +56,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <div className="container">
+          <div className="container-fluid">
             <Route exact path="/">
             <Header>
             <Nav
