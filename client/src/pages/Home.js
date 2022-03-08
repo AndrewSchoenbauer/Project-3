@@ -5,7 +5,7 @@ const Home = () => {
         <section>
             
         <h1 class= "welcome-text">Welcome!</h1>
-            <p> Let us help with organizing trip expenses! 
+            <p class= "home-text"> Let us help with organizing trip expenses! 
                 Start with signing up or logging in
                 
             </p>
