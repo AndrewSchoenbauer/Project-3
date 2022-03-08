@@ -18,12 +18,16 @@ const Header = () => {
         </div>
         <div>
           {Auth.loggedIn() ? (
-            <>
+            <div className='message'>
               <span>Hey there, {Auth.getProfile().data.username}!</span>
+              <Link to="/addTrip"><button className="btn btn-lg btn-light m-2">
+                Add Trip
+              </button>
+              </Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
-            </>
+            </div>
           ) : (
             <>
             <div className='btns'>
