@@ -24,6 +24,7 @@ export const QUERY_SINGLETRIP = gql`
 query Trip($tripId: ID!) {
   trip(tripId: $tripId) {
     tripName
+ 
     startDate
     endDate
     expenses {

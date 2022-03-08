@@ -40,10 +40,6 @@ const tripSchema = new Schema(
                    type: Number,
                    required: true,
                },
-               quantity: {
-                   type: Number,
-                   default: 1,
-               },
                expenseAuthor: {
                    type: String,
                    required: true,
@@ -58,7 +54,21 @@ const tripSchema = new Schema(
         id: false,
     }
 );
-
+// tripSchema.path('expenses').schema.virtual('totalExpense').get(function() {
+//     return 'foo'
+//   })
+tripSchema
+.virtual('totalExpense')
+.get(function () {
+  return this.expenses.reduce(function(currentValue, previousValue){
+      console.log(currentValue)
+     return (currentValue.price + previousValue.price);
+  });
+})
+// return this.expenses.map(expense =>{
+//     return expense.price
+// })
+// });
 const Trip = model('Trip', tripSchema);
 
 module.exports = Trip;

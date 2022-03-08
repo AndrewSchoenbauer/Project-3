@@ -5,10 +5,27 @@ const Home = () => {
         <section>
             
         <h1 class= "welcome-text">Welcome!</h1>
-            <p class= "home-text"> Let us help with organizing trip expenses! 
+            <h3 class= "home-text"> Let us help with organizing trip expenses! 
                 Start with signing up or logging in
                 
-            </p>
+            </h3>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             
         </section>
         

@@ -36,7 +36,8 @@ body {
 .container-fluid {
   background-image: url("https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/c7c4elegquhjubd1xmyb");
   background-size: cover;
-  height: 1000px;
+  background-attachment: fixed;
+  height: 100%;
   padding-left: 0px !important;
   padding-right: 0px !important;
 }
@@ -111,22 +112,25 @@ p {
 .my-trip-box {
   justify-content: center;
   padding-top: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .my-trip-container {
-  background-color: #259cb19c;
+  background-color: #c8ccb098;
   padding: 25px;
 }
 .my-trip-title {
   text-align: center;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: #978164;
 }
 .individual-trip {
-  background-color: #67d8e052 !important;
+  background-color: #e8edee9c !important;
   margin-top: 20px;
 }
 .individual-trip-name {
-  background-color: rgb(250, 241, 241) !important;
+  background-color: #c8ccb0 !important;
+  display: flex;
+  justify-content: center ;
 }
 header {
   height: 100px;
@@ -137,6 +141,7 @@ header {
   right: 2%;
 }
 .home-text {
+  text-align: center;
   border-radius: 51%;
   padding: 66px;
 }
@@ -230,8 +235,21 @@ footer h1 {
 .expenseContainer {
   width: 60%;
   margin: auto;
+  background-color: #c8ccb0;
 }
-
+.add-expense-btn {
+  display: flex;
+  align-items: center;
+}
+.expenseText {
+ text-align: center;
+ background-color: #8b898896;
+ width: 60%;
+ margin: auto;
+}
+.expenseListItems{
+  background-color: #b12704;
+}
 
 
 

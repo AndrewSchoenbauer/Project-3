@@ -20,16 +20,15 @@ const ExpenseList = (props) => {
     //   };
   return (
     <>
-    <div>
+    <div className='expenseContainer'>
       <Accordion>
         <Card>
         
-            <Accordion.Header as={Button} variant="link" eventKey="0">
+            <Accordion.Header className='expenseListItems'  variant="link" eventKey="0">
               {props.expenseDescription} 
             </Accordion.Header>
             <Accordion.Body>
-              Price: {props.price}<br/>
-              Quantity: {props.quantity}<br/>
+              Price: ${props.price}<br/>
               Added By: {props.expenseAuthor}<br/>
             </Accordion.Body>
         </Card>
