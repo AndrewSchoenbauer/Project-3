@@ -37,6 +37,8 @@ body {
   background-image: url("https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/c7c4elegquhjubd1xmyb");
   background-size: cover;
   height: 1000px;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 section {
@@ -52,6 +54,8 @@ section h1 {
   color: black;
 }
 p {
+  border-radius: 51%;
+  padding: 66px;
   text-align: center;
   background-color: white;
   opacity: 65%;
@@ -67,7 +71,7 @@ p {
 }
 
 header {
-  height: 150px;
+  height: 100px;
  background-color: white;
 }
 .btns {
@@ -80,7 +84,8 @@ header h1 {
 position: absolute;
 color: black;
 left: 2%;
- 
+font-family: emoji;
+font-weight: 900;
 }
 
 nav {
@@ -100,11 +105,17 @@ nav li {
 footer {
   height: 100px;
   justify-content: center;
-  background-color: rgba(78, 70, 52, 0.918);
+  background-color: rgb(243 243 243 / 92%);
  
 }
 footer h1 {
-  font-size: 15px;
+  font-size: 55px;
+  font-family: emoji;
+}
+.btn-light {
+  color: #000;
+  background-color: #c0d8f0 !important;
+  border-color: #f8f9fa;
 }
 
 .flex-row {
@@ -124,8 +135,21 @@ footer h1 {
   justify-content: center;
 }
 .message{
+  top: 19px;
   position: absolute;
   right: 2%;
+}
+.nav-message {
+  background-color: #fafafa;
+  padding: 10px;
+  color: #201f1e;
+  font-size: 30px;
+  font-family: emoji;
+
+}
+.welcome-text {
+  font-family: emoji;
+  font-size: 80px;
 }
 
 
