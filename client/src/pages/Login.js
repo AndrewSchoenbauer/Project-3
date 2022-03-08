@@ -43,9 +43,9 @@ console.log(formState.email)
   return (
 
     
-    <main className="flex-row justify-center mb-4">
+    <main className="flex-row justify-center mb-4 login-page">
       <div className="col-12 col-lg-10">
-        <div className="card">
+        <div className="card login-card-custom">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
             {data ? (
@@ -72,7 +72,7 @@ console.log(formState.email)
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-primary"
+                  className="btn btn-block login-btn-custom"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -83,7 +83,7 @@ console.log(formState.email)
 
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
+                Incorrect password or User does not exist. Please try again.
               </div>
             )}
           </div>
