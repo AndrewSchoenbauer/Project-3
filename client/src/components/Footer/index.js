@@ -7,7 +7,7 @@ function Footer() {
 
   return (
     <footer className="flex-row px-1">
-      <h1>Footer</h1>
+      <h1>Thank you for choosing us.</h1>
     </footer>
   );
 }
