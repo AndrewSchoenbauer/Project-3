@@ -123,6 +123,10 @@ footer h1 {
 .flex-center {
   justify-content: center;
 }
+.message{
+  position: absolute;
+  right: 2%;
+}
 
 
 @media only screen and (max-width: 900px) {

@@ -16,6 +16,11 @@ const tripSchema = new Schema(
             // Sets a default value of 12 weeks from now
             default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
         },
+        tripCreator: {
+            type: String,
+            required: true,
+            trim: true,
+        },
         users: [
             {
                 type: Schema.Types.ObjectId,

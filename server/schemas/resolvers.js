@@ -26,8 +26,12 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addTrip: async (parent, { tripName, startDate, endDate }) => {
-      const trip = await Trip.create({ tripName, startDate, endDate });
+    addTrip: async (parent, { tripName, startDate, endDate, tripCreator }) => {
+      const trip = await Trip.create({ tripName, startDate, endDate, tripCreator });
+      await User.findOneAndUpdate(
+        { username: tripCreator },
+        { $addToSet: { trips: trip._id } }
+      );
       return { trip };
     },
     login: async (parent, { email, password }) => {

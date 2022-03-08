@@ -32,7 +32,7 @@ const Trip = () => {
 
         try {
             const { data } = await addTrip({
-                variables: { tripName: formState.tripName, startDate: formState.startDate, endDate: formState.endDate },
+                variables: { tripName: formState.tripName, startDate: formState.startDate, endDate: formState.endDate, tripCreator: Auth.getProfile().data.username },
             });
 
 
