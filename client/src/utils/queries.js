@@ -5,7 +5,7 @@ export const QUERY_USER = gql`
     user(username: $username) {
         _id
         username
-        trip{
+        trips{
             _id
             tripName
       }

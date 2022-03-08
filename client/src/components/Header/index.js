@@ -24,6 +24,10 @@ const Header = () => {
                 Add Trip
               </button>
               </Link>
+              <Link to="/profile"><button className="btn btn-lg btn-light m-2">
+                My Trips
+              </button>
+              </Link>
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
