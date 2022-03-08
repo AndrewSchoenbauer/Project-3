@@ -77,3 +77,9 @@ export const ADD_USER = gql`
       }
     }
   }`
+  export const REMOVE_EXPENSE=gql`
+  mutation removeExpense($tripId: ID!, $expenseId: ID!){
+    removeExpense(tripId: $tripId, expenseId: $expenseId){
+      tripName
+    }
+  }`
