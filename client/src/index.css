@@ -82,6 +82,19 @@ p {
   border-color: #dae1ed ip !important;
   margin-top: 15px;
 }
+.login-btn-custom {
+  background-color: #9bb4c779 !important;
+  margin-left: 15px;
+  padding: 2px 15px !important;
+}
+.login-page {
+  padding-top: 100px;
+  justify-content: center;
+}
+.login-card-custom {
+  width: 50%;
+  margin: auto;
+}
 .bg-primary {
   --bs-bg-opacity: 1;
   background-color: white !important;
@@ -211,6 +224,15 @@ footer h1 {
   font-family: emoji;
   font-size: 80px;
 }
+
+/* expense page*/
+
+.expenseContainer {
+  width: 60%;
+  margin: auto;
+}
+
+
 
 
 @media only screen and (max-width: 900px) {
