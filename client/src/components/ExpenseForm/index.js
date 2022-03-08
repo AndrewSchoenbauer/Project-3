@@ -45,7 +45,7 @@ console.log(data);
 
 
   return (
-    <div>
+    <div className='expenseContainer'>
       <h4>Do you have any expenses to add?</h4>
 
       {Auth.loggedIn() ? (
