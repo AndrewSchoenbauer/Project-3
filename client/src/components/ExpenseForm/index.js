@@ -23,13 +23,8 @@ const ExpenseForm = ({ tripId }) => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
-    // const newObj =  { tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor }
-    // console.log(newObj);
     
     try {
-      // const  data  = await addExpense({
-      //   variables: { tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor },
-      // });
       const  {data}  = await addExpense({
         variables: {  tripId: formState.tripId, expenseDescription: formState.expenseDescription, price: parseInt(formState.price), quantity: parseInt(formState.quantity), expenseAuthor: formState.expenseAuthor },
       });
