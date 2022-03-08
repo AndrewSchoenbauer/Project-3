@@ -33,13 +33,13 @@ console.log(data);
     } catch (err) {
       console.error(JSON.stringify(err,null,2));
     }
-    // setFormState({
-    //   tripId: tripId,
-    //   expenseDescription: '',
-    //   price: 0,
-    //   expenseAuthor: '',
-    //   quanitity: 0,
-    // })
+    setFormState({
+      tripId: tripId,
+      expenseDescription: '',
+      price: 0,
+      expenseAuthor: '',
+      quanitity: 0,
+    })
   };
 
 

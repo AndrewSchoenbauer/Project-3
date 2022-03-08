@@ -6,7 +6,7 @@ const resolvers = {
   Query: {
     users: async () => {
       return User.find()
-      // .populate('trips');
+      .populate('trips');
     },
     trips: async () => {
       return Trip.find();
@@ -16,7 +16,7 @@ const resolvers = {
       return trip;
     },
     user: async (parent, { username }) => {
-      return User.findOne({ username });
+      return User.findOne({ username }).populate('trips');
     },
   },
 

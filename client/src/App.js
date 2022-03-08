@@ -17,6 +17,7 @@ import SingleTrip from './pages/SingleTrip';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Trip from './pages/Trip'
+import Profile from "./pages/profile";
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -60,15 +61,16 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
+        <Header/>
           <div className="container-fluid">
             <Route exact path="/">
-            <Header>
-            <Nav
+            
+            {/* <Nav
               pages={pages}
               setCurrentPage={setCurrentPage}
               currentPage={currentPage}
-            ></Nav>
-            </Header>
+            ></Nav> */}
+           
               <Home />
             </Route>
             <Route exact path="/login">
@@ -83,9 +85,13 @@ function App() {
             <Route exact path="/trips/:tripId">
               <SingleTrip />
             </Route>
+            <Route exact path="/profile"> 
+              <Profile />
+            </Route>
           </div>
           <Footer />
         </div>
+        
       </Router>
     </ApolloProvider>
   );
