@@ -8,7 +8,7 @@ import ExpenseList from '../components/ExpenseList';
 import ExpenseForm from '../components/ExpenseForm';
 import UserForm from '../components/UserForm'
 import { QUERY_SINGLETRIP } from '../utils/queries';
-import { QUERY_USER } from '../utils/queries';
+// import { QUERY_USER } from '../utils/queries';
 
 
 const SingleTrip = () => {
@@ -69,7 +69,7 @@ const SingleTrip = () => {
         <UserForm tripId={tripId}></UserForm>
       </div>
       <div>
-            <h1 className="title">Expenses</h1>
+            <h1 className="title">Total Expenses: </h1>
             {trip.expenses.map(expenseCreator)}
           </div>
     </div>

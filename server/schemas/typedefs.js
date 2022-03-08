@@ -21,6 +21,7 @@ const typeDefs = gql`
       endDate: String
       expenses: [Expense]
       users: [User]!
+      totalExpense: Int
   }
   type Auth {
     token: ID!
@@ -31,6 +32,7 @@ const typeDefs = gql`
     user(username: String!): User
     trips: [Trip]
     trip(tripId: ID!): Trip
+    tripTotal(tripId:ID!):Trip
   }
 
   type Mutation {
