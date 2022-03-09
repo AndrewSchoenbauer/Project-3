@@ -235,7 +235,7 @@ footer h1 {
 .expenseContainer {
   width: 60%;
   margin: auto;
-  background-color: #c8ccb0;
+  background-color: #c8ccb067;
 }
 .add-expense-btn {
   display: flex;
@@ -243,14 +243,31 @@ footer h1 {
 }
 .expenseText {
  text-align: center;
- background-color: #8b898896;
+ background-color: #c8ccb0;
  width: 60%;
  margin: auto;
 }
 .expenseListItems{
-  background-color: #b12704;
+  margin: 20px;
 }
-
+.totalexpenseText {
+  text-align: center;
+  background-color: #c8ccb0;
+  width: 60%;
+  margin: auto;
+ }
+ .userContainer {
+  width: 60%;
+  margin: auto;
+  background-color: #c8ccb067;
+  margin-bottom: 50px;
+}
+.totalexpenseContainer {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 50px;
+  background-color: #c8ccb067;
+}
 
 
 @media only screen and (max-width: 900px) {

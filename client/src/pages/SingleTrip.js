@@ -29,7 +29,6 @@ const SingleTrip = () => {
     key={item._id}
     expenseDescription={item.expenseDescription}
     price= {item.price}
-    quantity={item.quantity}
     expenseAuthor={item.expenseAuthor}  />;
   };
   if (loading) {
@@ -52,6 +51,7 @@ const SingleTrip = () => {
             display: 'flex',
             justifyContent: 'center',
             fontSize: '3rem',
+            fontWeight: 'bolder',
             fontStyle: 'italic',
             border: '2px solid #1a1a1a',
             lineHeight: '1.0',
@@ -71,7 +71,8 @@ const SingleTrip = () => {
         <UserForm tripId={tripId}></UserForm>
       </div>
       <div>
-            <h1 className='expenseText' >Total Expenses: </h1>
+            <h1 className='totalexpenseText' >Total Expenses:
+             </h1>
             {trip.expenses.map(expenseCreator)}
           </div>
     </div>

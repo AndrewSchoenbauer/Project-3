@@ -37,7 +37,7 @@ const UserForm = ({ tripId }) => {
         }
     };
     return (
-        <form className='expenseContainer' onSubmit={handleFormSubmit}>
+        <form className='userContainer' onSubmit={handleFormSubmit}>
             <Form.Select aria-label="Default select example" onChange={handleChange} name="userId">
                 <option>Open this select menu</option>
                 {users.map((user) => (
