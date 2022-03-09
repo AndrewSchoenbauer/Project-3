@@ -122,7 +122,7 @@ window.location.reload()
       </>
        ) : ( 
       <p>
-        You need to be logged in to share your thoughts. Please{' '}
+        You need to be logged in to add expenses to a trip! Please{' '}
         <Link to="/login">login</Link>
         {/* or <Link to="/signup">signup.</Link> */}
       </p>
