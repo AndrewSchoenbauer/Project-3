@@ -91,8 +91,8 @@ window.location.reload()
             value={formState.expenseDescription}
             onChange={handleChange} />
           </InputGroup>
-          <div className="col-12 add-expense-btn">
-              <button className="btn btn-primary add-expense-btn" type="submit">
+          <div className="col-5 add-expense-btn">
+              <button className="btn add-expense-btn" type="submit">
                 Add Expense
               </button>
             </div>

@@ -39,13 +39,13 @@ const UserForm = ({ tripId }) => {
     return (
         <form className='userContainer' onSubmit={handleFormSubmit}>
             <Form.Select aria-label="Default select example" onChange={handleChange} name="userId">
-                <option>Open this select menu</option>
+                <option>Click here to add user</option>
                 {users.map((user) => (
                     <option data-id={user._id} value={user._id} >{user.username}</option>))}
             </Form.Select>
-            <div className="col-12 add-expense-btn">
-                <button className="btn btn-primary btn-block py-3" type="submit">
-                    Add User to this Trip
+            <div className="col-5 add-expense-btn ">
+                <button className="btn btn-block py-3 add-expense-btn" type="submit">
+                    Add User
                 </button>
             </div>
         </form>
