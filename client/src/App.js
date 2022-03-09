@@ -62,7 +62,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh container-fluid">
         <Header/>
-          <div className="bigBody">
+          <div>
             <Route exact path="/">
             
             {/* <Nav
