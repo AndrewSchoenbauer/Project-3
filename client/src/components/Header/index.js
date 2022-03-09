@@ -12,7 +12,7 @@ const Header = () => {
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Split It Up</h1>
+            <h1 className="m-0"><span className='split-it'>Split It</span><span className='up'>Up</span></h1>
           </Link>
 
         </div>

@@ -129,7 +129,7 @@ p {
 .my-trip-title {
   text-align: center;
   padding: 20px;
-  background-color: #b1b1b1;
+  background-color: #b1d1af;
 }
 .my-trip-btn {
   padding: 5px;
@@ -343,7 +343,16 @@ footer h1 {
   margin-left: auto;
   margin-right: auto;
 }
-
+.split-it {
+  background-color: #bdfad5f6;
+  padding: 7px;
+  
+}
+.up {
+  margin-left: 5px;
+  background-color: #5adf8dbe;
+  padding: 7px;
+}
 
 @media only screen and (max-width: 900px) {
   nav li{

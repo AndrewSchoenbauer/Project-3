@@ -44,7 +44,7 @@ const SingleTrip = () => {
           Your Trip ({trip.startDate}) - ({trip.endDate})
         </span>
       </h3>
-      <div className="t py-4">
+      <div className="t py-4 single-trip-name">
         <blockquote
           className="p-4"
           style={{
