@@ -48,7 +48,7 @@ const Trip = () => {
                     <h4 className="card-header bg-dark text-light p-2">Create a Trip!</h4>
                     <div className="card-body ">
                         {data ? (
-                            <p>
+                            <p className='renderHome'>
                                 Success! You may now head{' '}
                                 <Link to="/">back to the homepage.</Link>
                             </p>

@@ -34,12 +34,14 @@ body {
 }
 
 .container-fluid {
-  background-image: url("https://res.cloudinary.com/worldpackers/image/upload/c_fill,f_auto,q_auto,w_1024/v1/guides/article_cover/c7c4elegquhjubd1xmyb");
+  background-image: url("https://static.toiimg.com/photo/68114443.cms");
+  /* background-image: url(''); */
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
+  /* height: 50%; */
   padding-left: 0px !important;
   padding-right: 0px !important;
+  background-position-y: -300px;
 }
 
 section {
@@ -109,23 +111,35 @@ p {
 .create-trip-box {
   margin-top: 60px;
 }
+.renderHome {
+  width: 800px;
+}
+.bigBody {
+  height: 950px;
+}
 .my-trip-box {
   justify-content: center;
   padding-top: 25px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .my-trip-container {
-  background-color: #c8ccb098;
+  background-color: #fcfcfcb9;
   padding: 25px;
 }
 .my-trip-title {
   text-align: center;
   padding: 20px;
-  background-color: #978164;
+  background-color: #b1b1b1;
+}
+.my-trip-btn {
+  padding: 5px;
 }
 .individual-trip {
   background-color: #e8edee9c !important;
-  margin-top: 20px;
+  width: 45%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .individual-trip-name {
   background-color: #c8ccb0 !important;
@@ -140,11 +154,7 @@ header {
   position: absolute;
   right: 2%;
 }
-.home-text {
-  text-align: center;
-  border-radius: 51%;
-  padding: 66px;
-}
+
 .card {
   position: relative;
   display: flex;
@@ -183,7 +193,7 @@ nav li {
 footer {
   height: 100px;
   justify-content: center;
-  background-color: rgb(243 243 243 / 92%);
+  background-color: rgb(255, 255, 255);
  
 }
 footer h1 {
@@ -216,6 +226,7 @@ footer h1 {
   top: 19px;
   position: absolute;
   right: 2%;
+  
 }
 .nav-message {
   background-color: #fafafa;
@@ -223,13 +234,66 @@ footer h1 {
   color: #201f1e;
   font-size: 30px;
   font-family: emoji;
-
+  
 }
 .welcome-text {
   font-family: emoji;
-  font-size: 80px;
+  font-size: 150px;
+  animation-name: welcomeText;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  opacity: 0%;
 }
-
+@keyframes welcomeText {
+  0% {
+    opacity: 0%;
+    font-size: 100px;
+  }
+  50% {
+    opacity: 100%;
+    font-size: 150px;
+  }
+  90% {
+    opacity: 100%;
+    font-size: 150px;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+.home-text {
+  opacity: 100%;
+  text-align: center;
+  border-radius: 51%;
+  font-size: 30px;
+  padding: 14px;
+  animation-name: welcomeMessage;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+}
+@keyframes welcomeMessage {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 0%;
+  }
+  60% {
+    opacity: 100%;
+  }
+  80% {
+    opacity: 100%;
+    font-size: 30px;
+  }
+}
+.welcome-container {
+  height: 900px;
+  max-height: 1000px;
+}
+.welcome-star {
+  opacity: 40%;
+  background-color: transparent;
+}
 /* expense page*/
 
 .expenseContainer {

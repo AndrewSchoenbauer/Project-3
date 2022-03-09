@@ -15,7 +15,7 @@ console.log(user)
             </h4>
             
             <Link
-              className="btn btn-primary btn-block btn-squared "
+              className="btn btn-block btn-squared my-trip-btn"
               to={`/trips/${trip._id}`}
             >
               Go here to edit your trip!
